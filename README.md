@@ -27,24 +27,25 @@ Run the following script to split your data among clients:
 ```bash
 python generate_split.py --num_clients 5 --data_path /path/to/data
 ```
-Arguments:
--- num_clients: Number of simulated clients (default = 5)
--- data_path: Path to the local dataset directory
+**Arguments**:
+- num_clients: Number of simulated clients (default = 5)
+- data_path: Path to the local dataset directory
 
 ### 5. Configure Federated Learning Job
 Structure of the project is shown below, customise the config 
-prostate/prostate_2D/job_configs/picai_fedsemi/
-├── app/
-│   └── config/
-│       ├── config_fed_client.json
-│       └── config_fed_server.json
-└── meta.json
+```bash
+  prostate/prostate_2D/job_configs/picai_fedsemi/
+  ├── app/
+  │   └── config/
+  │       ├── config_fed_client.json
+  │       └── config_fed_server.json
+  └── meta.json
+```
+**Update these files to:**
+- Adjust number of clients, learning rate, epochs, etc.
+- Match client site names in meta.json with the expected setup.
 
-Update these files to:
--- Adjust number of clients, learning rate, epochs, etc.
--- Match client site names in meta.json with the expected setup.
-
-6. Run FL Simulation
+### 6. Run FL Simulation
 To start the FL simulation using NVIDIA FLARE from within prostate/prostate_2D/job_configs/picai_fedsemi/:
 ```bash
 nvflare simulator . \
@@ -54,12 +55,11 @@ nvflare simulator . \
   -gpu 0
 ```
 
-Options:
-
--- -w: Path to the workspace
--- -n: Number of clients
--- -t: Number of training rounds
--- -gpu: GPU to use for training
+**Options:**
+- -w: Path to the workspace
+- -n: Number of clients
+- -t: Number of training rounds
+- -gpu: GPU to use for training
 
 6. Inference: Detection Phase
 After training completes, you’ll get FL_global_model.pt from the server within workspace. Use this model for inference:
