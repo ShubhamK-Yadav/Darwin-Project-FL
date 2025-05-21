@@ -17,6 +17,7 @@ export PYTHONPATH=/users/$USER/prostate/prostate_2D
 Navigate to the project directory and install dependencies:
 ```bash
 cd prostate
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r flare_requirements.txt
 ```
 ### 3. Preprocessing and Classification
