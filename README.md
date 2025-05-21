@@ -10,7 +10,7 @@ Make sure you are in a python virtual environment using the appropriate Python m
 source ~/env/prostate-env/bin/activate
 pip install --upgrade pip
 module load Python/3.10.8-GCCcore-12.2.0
-export PYTHONPATH=/users/aca21sky/prostate/prostate_2D
+export PYTHONPATH=/users/$USER/prostate/prostate_2D
 ```
 
 ### 2. Install the Requirements
