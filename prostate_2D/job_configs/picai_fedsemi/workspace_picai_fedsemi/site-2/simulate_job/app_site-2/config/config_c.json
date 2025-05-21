@@ -1,0 +1,20 @@
+{
+  "format_version": 2,
+  "executors": [
+    {
+      "tasks": ["train"],
+      "executor": {
+        "path": "custom.learners.semi_supervised_learner.SemiSupervisedLearner",
+        "args": {
+          "n_epoch": 50,
+          "batch_size": 4,
+          "lr": 1e-4,
+          "n_channels": 3,
+          "n_classes": 2,
+          "image_size": 384
+        }
+      }
+    }
+  ]
+}
+

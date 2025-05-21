@@ -1,0 +1,46 @@
+2025-05-21 00:38:05,709 - SimulatorRunner - INFO - Create the Simulator Server.
+2025-05-21 00:38:05,711 - CoreCell - INFO - server: creating listener on tcp://0:52454
+2025-05-21 00:38:05,960 - CoreCell - INFO - server: created backbone external listener for tcp://0:52454
+2025-05-21 00:38:05,961 - ConnectorManager - INFO - 46604: Try start_listener Listener resources: {'secure': False, 'host': 'localhost'}
+2025-05-21 00:38:05,962 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00002 PASSIVE tcp://0:28798] is starting
+2025-05-21 00:38:06,464 - CoreCell - INFO - server: created backbone internal listener for tcp://localhost:28798
+2025-05-21 00:38:06,465 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00001 PASSIVE tcp://0:52454] is starting
+2025-05-21 00:38:06,522 - nvflare.fuel.hci.server.hci - INFO - Starting Admin Server localhost on Port 57086
+2025-05-21 00:38:06,522 - SimulatorRunner - INFO - Deploy the Apps.
+2025-05-21 00:38:06,590 - SimulatorRunner - INFO - Create the simulate clients.
+2025-05-21 00:38:06,603 - ClientManager - INFO - Client: New client site-1@10.10.14.8 joined. Sent token: 59d0d00e-08f2-4ef9-87f0-3e37456658ef.  Total clients: 1
+2025-05-21 00:38:06,604 - FederatedClient - INFO - Successfully registered client:site-1 for project simulator_server. Token:59d0d00e-08f2-4ef9-87f0-3e37456658ef SSID:
+2025-05-21 00:38:06,606 - ClientManager - INFO - Client: New client site-2@10.10.14.8 joined. Sent token: c6e4221b-2cb4-4a33-b484-9d822fe86874.  Total clients: 2
+2025-05-21 00:38:06,607 - FederatedClient - INFO - Successfully registered client:site-2 for project simulator_server. Token:c6e4221b-2cb4-4a33-b484-9d822fe86874 SSID:
+2025-05-21 00:38:06,607 - SimulatorRunner - INFO - Set the client status ready.
+2025-05-21 00:38:06,608 - SimulatorRunner - INFO - Deploy and start the Server App.
+2025-05-21 00:38:06,610 - Cell - INFO - Register blob CB for channel='server_command', topic='*'
+2025-05-21 00:38:06,610 - Cell - INFO - Register blob CB for channel='aux_communication', topic='*'
+2025-05-21 00:38:06,611 - ServerCommandAgent - INFO - ServerCommandAgent cell register_request_cb: server.simulate_job
+2025-05-21 00:38:13,620 - IntimeModelSelector - INFO - model selection weights control: None
+2025-05-21 00:38:13,627 - AuxRunner - INFO - registered aux handler for topic __sync_runner__
+2025-05-21 00:38:13,627 - AuxRunner - INFO - registered aux handler for topic __job_heartbeat__
+2025-05-21 00:38:13,628 - AuxRunner - INFO - registered aux handler for topic __task_check__
+2025-05-21 00:38:13,629 - AuxRunner - INFO - registered aux handler for topic RM.RELIABLE_REQUEST
+2025-05-21 00:38:13,630 - AuxRunner - INFO - registered aux handler for topic RM.RELIABLE_REPLY
+2025-05-21 00:38:13,631 - ReliableMessage - INFO - enabled reliable message: max_request_workers=20 query_interval=2.0
+2025-05-21 00:38:13,632 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: Server runner starting ...
+2025-05-21 00:38:13,632 - AuxRunner - INFO - registered aux handler for topic fed.event
+2025-05-21 00:38:13,633 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: starting workflow scatter_and_gather (<class 'nvflare.app_common.workflows.scatter_and_gather.ScatterAndGather'>) ...
+2025-05-21 00:38:13,634 - ScatterAndGather - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: Initializing ScatterAndGather workflow.
+2025-05-21 00:38:13,635 - PTFileModelPersistor - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: Both source_ckpt_file_full_name and ckpt_preload_path are not provided. Using the default model weights initialized on the persistor side.
+2025-05-21 00:38:13,638 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: Workflow scatter_and_gather (<class 'nvflare.app_common.workflows.scatter_and_gather.ScatterAndGather'>) started
+2025-05-21 00:38:13,639 - ScatterAndGather - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: Beginning ScatterAndGather training phase.
+2025-05-21 00:38:13,639 - ScatterAndGather - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: Round 0 started.
+2025-05-21 00:38:13,640 - WFCommServer - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather]: scheduled task train
+2025-05-21 00:38:14,245 - SimulatorClientRunner - INFO - Start the clients run simulation.
+2025-05-21 00:38:15,247 - SimulatorClientRunner - INFO - Simulate Run client: site-1 on GPU group: 0
+2025-05-21 00:38:15,248 - SimulatorClientRunner - INFO - Simulate Run client: site-2 on GPU group: 0
+2025-05-21 00:38:16,338 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connection [CN00005 127.0.0.1:52454 <= 127.0.0.1:60772] is created: PID: 46604
+2025-05-21 00:38:16,338 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connection [CN00006 127.0.0.1:52454 <= 127.0.0.1:60770] is created: PID: 46604
+2025-05-21 00:38:28,569 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather, peer=site-1, peer_run=simulate_job, task_name=train, task_id=db6045b0-94cc-4136-b3eb-41db004354b9]: assigned task to client site-1: name=train, id=db6045b0-94cc-4136-b3eb-41db004354b9
+2025-05-21 00:38:28,570 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather, peer=site-1, peer_run=simulate_job, task_name=train, task_id=db6045b0-94cc-4136-b3eb-41db004354b9]: sent task assignment to client. client_name:site-1 task_id:db6045b0-94cc-4136-b3eb-41db004354b9
+2025-05-21 00:38:28,570 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather, peer=site-2, peer_run=simulate_job, task_name=train, task_id=bd35f8cb-0821-4f3d-9deb-c3c4674da7d5]: assigned task to client site-2: name=train, id=bd35f8cb-0821-4f3d-9deb-c3c4674da7d5
+2025-05-21 00:38:28,571 - GetTaskCommand - INFO - return task to client.  client_name: site-1  task_name: train   task_id: db6045b0-94cc-4136-b3eb-41db004354b9  sharable_header_task_id: db6045b0-94cc-4136-b3eb-41db004354b9
+2025-05-21 00:38:28,571 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=scatter_and_gather, peer=site-2, peer_run=simulate_job, task_name=train, task_id=bd35f8cb-0821-4f3d-9deb-c3c4674da7d5]: sent task assignment to client. client_name:site-2 task_id:bd35f8cb-0821-4f3d-9deb-c3c4674da7d5
+2025-05-21 00:38:28,601 - GetTaskCommand - INFO - return task to client.  client_name: site-2  task_name: train   task_id: bd35f8cb-0821-4f3d-9deb-c3c4674da7d5  sharable_header_task_id: bd35f8cb-0821-4f3d-9deb-c3c4674da7d5

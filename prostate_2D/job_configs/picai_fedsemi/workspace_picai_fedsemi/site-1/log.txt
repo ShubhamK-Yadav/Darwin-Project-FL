@@ -1,0 +1,20 @@
+2025-05-21 00:38:16,260 - ClientTaskWorker - INFO - ClientTaskWorker started to run
+2025-05-21 00:38:16,336 - CoreCell - INFO - site-1.simulate_job: created backbone external connector to tcp://localhost:52454
+2025-05-21 00:38:16,337 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00001 ACTIVE tcp://localhost:52454] is starting
+2025-05-21 00:38:16,338 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connection [CN00002 127.0.0.1:60772 => 127.0.0.1:52454] is created: PID: 46639
+2025-05-21 00:38:28,050 - AuxRunner - INFO - registered aux handler for topic __end_run__
+2025-05-21 00:38:28,051 - AuxRunner - INFO - registered aux handler for topic __do_task__
+2025-05-21 00:38:28,052 - Cell - INFO - Register blob CB for channel='aux_communication', topic='*'
+2025-05-21 00:38:28,557 - Cell - INFO - broadcast: channel='aux_communication', topic='__sync_runner__', targets=['server.simulate_job'], timeout=2.0
+2025-05-21 00:38:28,562 - ClientRunner - INFO - [identity=site-1, run=simulate_job]: synced to Server Runner in 0.5055866241455078 seconds
+2025-05-21 00:38:28,563 - AuxRunner - INFO - registered aux handler for topic RM.RELIABLE_REQUEST
+2025-05-21 00:38:28,563 - AuxRunner - INFO - registered aux handler for topic RM.RELIABLE_REPLY
+2025-05-21 00:38:28,564 - ReliableMessage - INFO - enabled reliable message: max_request_workers=20 query_interval=2.0
+2025-05-21 00:38:28,565 - AuxRunner - INFO - registered aux handler for topic fed.event
+2025-05-21 00:38:28,565 - ClientRunner - INFO - [identity=site-1, run=simulate_job]: client runner started
+2025-05-21 00:38:28,567 - ClientTaskWorker - INFO - Initialize ClientRunner for client: site-1
+2025-05-21 00:38:28,757 - Communicator - INFO - Received from simulator_server server. getTask: train size: 60.6MB (60603154 Bytes) time: 0.189656 seconds
+2025-05-21 00:38:28,758 - FederatedClient - INFO - pull_task completed. Task name:train Status:True 
+2025-05-21 00:38:28,759 - ClientRunner - INFO - [identity=site-1, run=simulate_job, peer=simulator_server, peer_run=simulate_job]: got task assignment: name=train, id=db6045b0-94cc-4136-b3eb-41db004354b9
+2025-05-21 00:38:28,760 - ClientRunner - INFO - [identity=site-1, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=db6045b0-94cc-4136-b3eb-41db004354b9]: invoking task executor LearnerExecutor
+2025-05-21 00:38:28,761 - LearnerExecutor - INFO - [identity=site-1, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=db6045b0-94cc-4136-b3eb-41db004354b9]: Client trainer got task: train
