@@ -10,7 +10,6 @@ Make sure you are in a python virtual environment using the appropriate Python m
 source ~/env/prostate-env/bin/activate
 pip install --upgrade pip
 module load Python/3.10.8-GCCcore-12.2.0
-export PYTHONPATH=/users/$USER/prostate/prostate_2D
 ```
 
 ### 2. Install the Requirements
@@ -24,7 +23,7 @@ pip install -r flare_requirements.txt
 Follow instructions in the original [ITUNet-for-PICAI-2022-Challenge](https://github.com/Yukiya-Umimi/ITUNet-for-PICAI-2022-Challenge/tree/main) to run preprocessing and classification steps. These are prerequisites before proceeding to FL training.
 
 ### 4. Generate Federated Client Splits
-Run the following script to split your data among clients:
+Run the following script to split your data among clients (run this script whenever you change the number of clients):
 ```bash
 python generate_split.py --num_clients 5 --data_path /path/to/data
 ```
