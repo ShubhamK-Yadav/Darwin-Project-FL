@@ -44,6 +44,7 @@ Structure of the project is shown below, customise the config
 **Update these files to:**
 - Adjust number of clients, learning rate, epochs, etc.
 - Match client site names in meta.json with the expected setup.
+- Change path to the data root and split.json within config_fed_client.json.
 
 ### 6. Run FL Simulation
 To start the FL simulation using NVIDIA FLARE from within prostate/prostate_2D/job_configs/picai_fedsemi/:
@@ -55,10 +56,10 @@ nvflare simulator . \
   -gpu 0
 ```
 
-**Options:**
+**Options (Ensure the number of clients listed here matches the value specified in the configuration):**
 - -w: Path to the workspace
 - -n: Number of clients
-- -t: Number of training rounds
+- -t: Number of threads
 - -gpu: GPU to use for training
 
 6. Inference: Detection Phase
