@@ -1,8 +1,7 @@
+
 # Federated Learning Pipeline for Prostate Cancer Detection (PiCAI)
 
 This repository contains the code to train a federated learning model using [NVIDIA FLARE](https://github.com/NVIDIA/NVFlare) for prostate cancer detection. The setup follows a semi-supervised federated learning scheme over 5 simulated clients.
-
----
 
 ### 1. Setup Environment
 Make sure you are in a python virtual environment using the appropriate Python module and set your `PYTHONPATH`:
