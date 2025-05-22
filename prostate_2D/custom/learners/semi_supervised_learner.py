@@ -112,7 +112,7 @@ class SemiSupervisedLearner(Learner, ModelLearner):
         # Package the diff into a DXO with correct DataKind
         dxo = DXO(data_kind=DataKind.WEIGHT_DIFF, data=model_diff)
 
-
+        dxo.meta["NUM_STEPS_CURRENT_ROUND"] = m
         # Convert to shareable
         return dxo.to_shareable()
 
