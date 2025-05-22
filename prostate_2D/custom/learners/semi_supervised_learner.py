@@ -92,7 +92,8 @@ class SemiSupervisedLearner(Learner, ModelLearner):
 
         # Save trained model for NVFlare
         self.model = seg_model.net
-
+        
+        m = len(train_set)
         # return {
         #     "train_dice": seg_model.metrics_threshold
         # }
