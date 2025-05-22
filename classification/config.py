@@ -1,3 +1,5 @@
+import getpass
+
 __all__ = ['efficientnet-b5']
 
 TASK = 'picai'
@@ -15,7 +17,7 @@ TTA_TIMES = 5
 NUM_CLASSES = 3
 from classification.utils import get_weight_list, get_weight_path
 
-CSV_PATH = '/users/aca21sky/prostate/preprocessed_output/classification/picai_illness_3c.csv'
+CSV_PATH = '/users/' + getpass.getuser() + '/prostate/preprocessed_output/classification/picai_illness_3c.csv'
 CKPT_PATH = './ckpt/{}/{}/fold{}'.format(TASK,VERSION,str(CURRENT_FOLD))
 WEIGHT_PATH = get_weight_path(CKPT_PATH)
 # WEIGHT_PATH_LIST = None
