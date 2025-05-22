@@ -8,15 +8,16 @@ Make sure you are in a python virtual environment using the appropriate Python m
 
 ```bash
 source ~/env/prostate-env/bin/activate
-pip install --upgrade pip
 module load Python/3.10.8-GCCcore-12.2.0
+pip install --upgrade pip setuptools wheel
 ```
 
 ### 2. Install the Requirements
 Navigate to the project directory and install dependencies:
 ```bash
-cd prostate
+pip install nvflare==2.5.1
 pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 -f https://download.pytorch.org/whl/torch_stable.html
+cd prostate
 pip install -r flare_requirements.txt
 ```
 ### 3. Preprocessing and Classification
