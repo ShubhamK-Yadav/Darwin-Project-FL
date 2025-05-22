@@ -20,7 +20,7 @@ def create_split(data_path, num_clients, output_path="split.json", seed=42):
     client_splits = defaultdict(list)
     
     for idx, file in enumerate(files):
-        client_id = f"site-{idx % num_clients}"
+        client_id = f"site-{(idx % num_clients) + 1}"
         client_splits[client_id].append(file)
 
     # Write to JSON
