@@ -12,6 +12,7 @@ import torch
 from torch.cuda.amp import autocast as autocast
 from torch.nn import functional as F
 import argparse
+import getpass
 
 def get_info(data):
     info = []
@@ -104,9 +105,9 @@ def store_images_labels_2d(save_path, patient_id, cts, labels):
 
 
 def make_data(
-    base_dir: Union[Path, str] = '../nnUNet_raw_data/Task2201_picai_baseline/imagesTr',
-    label_dir: Union[Path, str] = '../nnUNet_raw_data/Task2201_picai_baseline/labelsTr',
-    d2_dir: Union[Path, str] = '/users/aca21sky/prostate/preprocessed_output/images_illness_3c',
+    base_dir: Union[Path, str] = '/mnt/parscratch/users/' + getpass.getuser() + '/output/nnUNet_raw_data/Task2201_picai_baseline/imagesTr',
+    label_dir: Union[Path, str] = '/mnt/parscratch/users/' + getpass.getuser() + '/output/nnUNet_raw_data/Task2201_picai_baseline/labelsTr',
+    d2_dir: Union[Path, str] = '/mnt/parscratch/users/' + getpass.getuser() + '/output/images_illness_3c',
     csv_save_path: Union[Path, str] = 'picai_illness_3c.csv',
 ):
     os.makedirs(d2_dir, exist_ok=True)
@@ -153,9 +154,9 @@ def make_data(
     csv_file.to_csv(csv_save_path, index=False)
 
 def predict_test5c(
-    weight_path: str = '/users/aca21sky/prostate/classification/ckpt/picai/v0',
-    base_dir: str = '/users/aca21sky/prostate/preprocessed_output/nnUNet_test_data',
-    csv_save_path: str = '/users/aca21sky/prostate/classification_result/test_3c.csv',
+    weight_path: str = '/users/' + getpass.getuser() + '/prostate/classification/ckpt/picai/v0',
+    base_dir: str = '/users/' + getpass.getuser() + '/prostate/preprocessed_output/nnUNet_test_data',
+    csv_save_path: str = '/users/' + getpass.getuser() + '/prostate/classification_result/test_3c.csv',
 ):
     from efficientnet_pytorch import EfficientNet
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
