@@ -63,7 +63,7 @@ nvflare simulator . \
 - -t: Number of threads
 - -gpu: GPU to use for training
 
-6. Inference: Detection Phase
+### 7. Inference: Detection Phase
 After training completes, you’ll get FL_global_model.pt from the server within the workspace (inside server). Use this model for inference from prostate_2D directory:
 ```bash
 python prostate_2D/inference_seg_fl.py
