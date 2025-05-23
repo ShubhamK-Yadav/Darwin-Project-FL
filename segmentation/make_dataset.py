@@ -177,12 +177,12 @@ def make_semidata(base_dir,label_dir,output_dir,test_dir,seg_dir,csv_path):
 
 if __name__ == "__main__":
     phase = 'detect'
-    base_dir = '/mnt/parscratch/users/aca21sky/preprocessed_output/nnUNet_raw_data/Task2201_picai_baseline/imagesTr'
-    label_dir = '/mnt/parscratch/users/aca21sky/preprocessed_output/nnUNet_raw_data/Task2201_picai_baseline/labelsTr'
-    output_dir = '/mnt/parscratch/users/aca21sky/preprocessed_output/segmentation/detectdata'
-    test_dir = '/mnt/parscratch/users/aca21sky/preprocessed_output/nnUNet_test_data'
-    seg_dir = '/users/aca21sky/prostate/segmentation_result'
-    csv_path = '/users/aca21sky/prostate/classification_result/test_3c.csv'
+    base_dir = '/path/to/preprocessed_output/nnUNet_raw_data/Task2201_picai_baseline/imagesTr'
+    label_dir = '/path/to/preprocessed_output/nnUNet_raw_data/Task2201_picai_baseline/labelsTr'
+    output_dir = '/path/to/preprocessed_output/segmentation/detectdata'
+    test_dir = '/path/to/preprocessed_output/nnUNet_test_data'
+    seg_dir = '/path/to/segmentation_result'
+    csv_path = '/path/to/classification_result/test_3c.csv'
     if phase == 'seg':
         make_segdata(base_dir,label_dir,output_dir)
     else:
