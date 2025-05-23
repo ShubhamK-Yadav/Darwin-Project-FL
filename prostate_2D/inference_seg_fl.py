@@ -6,9 +6,9 @@ from custom.utils.training_utils import SemanticSeg  # Same as used in FL
 from tqdm import tqdm
 
 # === CONFIGURE THESE PATHS ===
-MODEL_PATH = "/users/aca21sky/prostate/prostate_2D/job_configs/picai_fedsemi/workspace_picai_fedsemi/server/simulate_job/app_server/FL_global_model.pt"  # Final FL-trained model checkpoint
-TEST_DIR = "/users/aca21sky/prostate/preprocessed_output/nnUNet_test_data"   # Contains subject_0000.nii.gz, subject_0001.nii.gz, ...
-OUTPUT_DIR = "/users/aca21sky/prostate/segmentation_result"     # Where predicted masks will go
+MODEL_PATH = "/path/to/workspace/server/simulate_job/app_server/FL_global_model.pt"  # Final FL-trained model checkpoint
+TEST_DIR = "/path/to/preprocessed_output/nnUNet_test_data"   # Contains subject_0000.nii.gz, subject_0001.nii.gz, ...
+OUTPUT_DIR = "/path/to/segmentation_result"     # Where predicted masks will go
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
