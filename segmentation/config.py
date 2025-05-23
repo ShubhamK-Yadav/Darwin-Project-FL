@@ -22,9 +22,9 @@ CURRENT_FOLD = 5
 GPU_NUM = len(DEVICE.split(','))
 
 #--------------------------------- mode and data path setting
-PATH_DIR = '/mnt/parscratch/users/aca21sky/preprocessed_output/segmentation/segdata/data_2d'
+PATH_DIR = '/mnt/parscratch/users/aca21sky/preprocessed_output/segmentation/detectdata/data_2d'
 PATH_LIST = glob.glob(os.path.join(PATH_DIR,'*.hdf5'))
-PATH_AP = '/mnt/parscratch/users/aca21sky/preprocessed_output/segmentation/segdata/data_3d'
+PATH_AP = '/mnt/parscratch/users/aca21sky/preprocessed_output/segmentation/detectdata/data_3d'
 AP_LIST = glob.glob(os.path.join(PATH_AP,'*.hdf5'))
 #---------------------------------
 
@@ -35,7 +35,7 @@ print(WEIGHT_PATH)
 #you could set it for your device
 INIT_TRAINER = {
   'num_classes':NUM_CLASSES,
-  'n_epoch':4,
+  'n_epoch':160,
   'batch_size':24,
   'num_workers':4,
   'device':DEVICE,
@@ -43,7 +43,10 @@ INIT_TRAINER = {
   'ckpt_point':CKPT_POINT,
   'weight_path':WEIGHT_PATH,
   'use_fp16':False,
-  'transformer_depth': TRANSFORMER_DEPTH
+  'transformer_depth': TRANSFORMER_DEPTH,
+  'use_transfer_learning': True,
+  'pretrained_backbone': 'resnet34',
+  'lr': 1e-4  # Lower learning rate for stability
  }
 #---------------------------------
 
