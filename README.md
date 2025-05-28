@@ -64,8 +64,13 @@ nvflare simulator . \
 - -gpu: GPU to use for training
 
 ### 7. Inference: Detection Phase
-After training completes, you’ll get FL_global_model.pt from the server within the workspace (inside server). Use this model for inference from prostate_2D directory:
+After training completes, you’ll get FL_global_model.pt from the server within the workspace created during the NVIDIA Flare simulation. Use this model for the inference below:
 ```bash
-python prostate_2D/inference_seg_fl.py
+python inference_seg_fl.py \
+  --workspace path/to/workspace \
+  --test_dir /path/to/nnUNet_test_data \
+  --output_dir /path/to/output_dir
+
 ```
+This generates predictions needed for the detection phase of the challenge. This script retrieves the final output model from the simulation. Use the output for the detection phase mentioned in [ITUNet-for-PICAI-2022-Challenge](https://github.com/Yukiya-Umimi/ITUNet-for-PICAI-2022-Challenge/tree/main/segmentation). The predict_2d.py in the detection phase is replaced by the inference_seg_fl.py above.
 This generates predictions needed for the detection phase of the challenge. Use the output for the detection phase mentioned in [ITUNet-for-PICAI-2022-Challenge](https://github.com/Yukiya-Umimi/ITUNet-for-PICAI-2022-Challenge/tree/main/segmentation)
